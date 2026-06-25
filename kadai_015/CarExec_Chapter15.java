@@ -1,7 +1,5 @@
 package kadai_015;
 
-import text.kadai_015.Car_Chapter15;
-
 public class CarExec_Chapter15 {
 
 	public static void main(String[] args) {
