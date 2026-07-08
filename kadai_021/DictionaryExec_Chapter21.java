@@ -6,10 +6,14 @@ public class DictionaryExec_Chapter21 {
 
         Dictionary_Chapter21 map = new Dictionary_Chapter21();
         
-        map.search("apple");
-        map.search("banana");
-        map.search("grape");
-        map.search("orange");
+        String[] words = {
+        		"apple",
+        		"banana",
+        		"grape",
+        		"orange"
+        		
+        };
+        map.search(words);
     }
 }
 

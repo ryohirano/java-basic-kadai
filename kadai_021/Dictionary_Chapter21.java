@@ -19,19 +19,19 @@ public class Dictionary_Chapter21 {
 		
 	}
     //英単語を検索するメソッド
-	public void search(String word) {
-		boolean found = false;
-		
-		//繰り返し処理で辞書に存在するか確認
-		for(String key :map.keySet()) {
-			if(key.equals(word)) {
-				System.out.println(word + "の意味は" + map.get(word));
-				found = true;
-				break;
+	public void search(String[]words) {
+		for(String word : words) {
+			boolean found =false;
+			for(String key : map.keySet()) {
+				if(key.equals(word)) {
+					System.out.println(word + "の意味は" + map.get(word));
+					found = true;
+					break;
+				}
 			}
-		}
-		if(!found) {
-			System.out.println(word + "は辞書に存在しません");
+			if(!found) {
+				System.out.println(word + "は辞書に存在しません");
+			}
 		}
 	
 	}
