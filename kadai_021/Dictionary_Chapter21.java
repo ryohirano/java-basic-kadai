@@ -21,15 +21,14 @@ public class Dictionary_Chapter21 {
 	}
 
 	//単語が存在するか判定
-	public boolean exists(String word) {
-		return map.containsKey(word);
-	}
-
-	//意味を取得
 	public String search(String word) {
-		return map.get(word);
+		if(map.containsKey(word)) {
+			return map.get(word);
+		}else {
+			return "辞書に存在しません";
+		}
 	}
-	}
+}
 	
 
 
