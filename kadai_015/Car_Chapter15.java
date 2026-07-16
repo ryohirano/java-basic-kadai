@@ -7,15 +7,37 @@ public class Car_Chapter15 {
 
 	//ギアチェンジすると速度も変わる
 	public void changeGear(int afterGear) {
-		this.gear = afterGear;
-		this.speed = this.gear * 10;//ギアに応じて速度変化
+		int beforeGear = this.gear; // 変更前のギア
+	    this.gear = afterGear;
 
-		System.out.println("ギアを" + gear + "に変更しました");
-		System.out.println("現在の速度は" + speed + "km/hです");
+	    // ギアに応じて速度を設定
+	    switch (this.gear) {
+	        case 1:
+	            this.speed = 10;
+	            break;
+	        case 2:
+	            this.speed = 20;
+	            break;
+	        case 3:
+	            this.speed = 30;
+	            break;
+	        case 4:
+	            this.speed = 40;
+	            break;
+	        case 5:
+	            this.speed = 50;
+	            break;
+	        default:
+	            this.speed = 10; // 1～5以外は10km/h
+	            break;
+	    }
+
+	    System.out.println("ギアを " + beforeGear + " から " + this.gear + " に変更しました");
+	    System.out.println("速度は時速" + this.speed + "kmです。");
 	}
 
 	//走行メソッド
 	public void run() {
-		System.out.println("走行中... 速度は" + speed + "km/h");
+		
 	}
 }
