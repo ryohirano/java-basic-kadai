@@ -7,7 +7,7 @@ public class CarExec_Chapter15 {
 		//carクラスをインスタンス化
 		Car_Chapter15 myCar = new Car_Chapter15();
 
-		myCar.changeGear(３); //ギアチェンジ
+		myCar.changeGear(3); //ギアチェンジ
 		myCar.run(); //ギアチェンジ後の速度で走行
 	}
 

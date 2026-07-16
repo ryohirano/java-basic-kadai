@@ -32,7 +32,7 @@ public class Car_Chapter15 {
 	            break;
 	    }
 
-	    System.out.println("ギアを " + beforeGear + " から " + this.gear + " に切り替えました");
+	    System.out.println("ギアを" + beforeGear + "から" + this.gear + "に切り替えました");
 	}
 
 	//走行メソッド
