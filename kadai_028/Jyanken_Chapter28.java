@@ -1,6 +1,5 @@
 package kadai_028;
 import java.util.HashMap;
-import java.util.Random;
 import java.util.Scanner;
 public class Jyanken_Chapter28 {
 	Scanner scanner = new Scanner(System.in);
@@ -21,9 +20,8 @@ public class Jyanken_Chapter28 {
 	}
 //対戦相手の手を乱数で決定する
 public String getRandom() {
-	Random random = new Random();
-	
-	int num = random.nextInt(3);
+	//0以上３未満の乱数を生成し、小数点以下を切り捨てる
+	int num = (int)Math.floor(Math.random()*3);
 	switch(num) {
 	case 0:
 		return "r";
