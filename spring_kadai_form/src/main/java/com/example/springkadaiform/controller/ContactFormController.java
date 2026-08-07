@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.example.springkadaiform.form.ContactForm;
 import jakarta.validation.Valid;
@@ -29,15 +30,22 @@ public class ContactFormController {
 	public String confirm(
 			@Valid ContactForm contactForm,
 			BindingResult bindingResult,
-			Model model) {
+			RedirectAttributes redirectAttributes) {
 
-		//バリデーションNG　→　フォームへ戻す
-		if(bindingResult.hasErrors()) {
-			model.addAttribute("contactForm", contactForm);
-			return "contactFormView";
-		}
+		 // バリデーション NG → /form にリダイレクト
+	    if (bindingResult.hasErrors()) {
+
+	        // 入力値を保持したままフォームに戻す
+	        redirectAttributes.addFlashAttribute("contactForm", contactForm);
+
+	        // エラー情報をフォームに渡す
+	        redirectAttributes.addFlashAttribute(
+	                "org.springframework.validation.BindingResult.contactForm",
+	                bindingResult);
+
+	        return "redirect:/form";
+	    }
 		//バリデーションOK　→　確認画面へ
-		model.addAttribute("contactForm", contactForm);
 		return "confirmView";
 	}
 
