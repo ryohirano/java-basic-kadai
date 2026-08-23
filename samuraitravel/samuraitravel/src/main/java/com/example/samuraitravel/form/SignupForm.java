@@ -15,7 +15,7 @@ private String name;
 private String furigana;
 
 @NotBlank(message = "郵便番号を入力してください")
-private String postaCode;
+private String postalCode;
 
 @NotBlank(message = "住所を入力してください。")
 private String address;
@@ -32,5 +32,5 @@ private String email;
 private String password;
 
 @NotBlank(message = "パスワード(確認用）を入力してください。")
-private String passwordCongirmation;
+private String passwordConfirmation;
 }
