@@ -149,5 +149,5 @@ public class AdminHouseController {
         redirectAttributes.addFlashAttribute("successMessage", "民宿を削除しました。");
 
         return "redirect:/admin/houses";
-    }    
+    }
 }
